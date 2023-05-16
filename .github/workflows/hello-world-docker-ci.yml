@@ -18,6 +18,6 @@ jobs:
           who-to-greet: 'Chief'
           
       - name: Output Time
-        run: echo "The time was ${{ steps.hello-action.outputs.time }} when the action said hello"
+        run: echo "The time was ${{ steps.container-action.outputs.time }} when the action said hello"
 
   
