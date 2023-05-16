@@ -1,0 +1,23 @@
+name: Docker CI Demo
+on:
+  push:
+    branches: main
+  workflow_dispatch:
+    
+jobs:
+  test-action:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3.3.0
+        
+      - name: Run my own container action
+        id: container-action
+        uses: ./
+        with:
+          who-to-greet: 'Chief'
+          
+      - name: Output Time
+        run: echo "The time was ${{ steps.hello-action.outputs.time }} when the action said hello"
+
+  
