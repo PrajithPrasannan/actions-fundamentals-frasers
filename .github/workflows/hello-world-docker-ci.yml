@@ -18,7 +18,7 @@ jobs:
         id: container-action
         uses: ./
         with:
-          who-to-greet: ${{ github.event.inputs.message }}
+          who-to-greet: ${{ github.event.inputs.who-to-greet }}
           
       - name: Output Time
         run: echo "The time was ${{ steps.container-action.outputs.time }} when the action said hello"
