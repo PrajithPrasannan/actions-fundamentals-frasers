@@ -3,6 +3,9 @@ on:
   push:
     branches: main
   workflow_dispatch:
+    inputs:
+      who-to-greet:
+        required: true
     
 jobs:
   test-action:
@@ -15,7 +18,7 @@ jobs:
         id: container-action
         uses: ./
         with:
-          who-to-greet: 'Chief'
+          who-to-greet: ${{ github.event.inputs.message }}
           
       - name: Output Time
         run: echo "The time was ${{ steps.container-action.outputs.time }} when the action said hello"
