@@ -6,6 +6,7 @@ on:
     inputs:
       who-to-greet:
         required: true
+        default: 'stranger'
     
 jobs:
   test-action:
